@@ -366,6 +366,12 @@ function onClearForm() {
     optionSt.text = "Select State";
     st.add(optionSt);
 
+    document.getElementById("pname").innerHTML = "";
+    document.getElementById("pemail").innerHTML = "";
+    document.getElementById("pgender").innerHTML = "";
+    document.getElementById("phobbies").innerHTML = "";
+    document.getElementById("page").innerHTML = "";
+    document.getElementById("pcountry").innerHTML = "";
 }
 
 function tableOder() {
