@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>User Details</title>
+</head>
+
+<body style="background-color: #cacacadc;">
+    <div style="display: flex;">
+        <div class="div" style="flex: 1; margin: 20px;">
+            <form id="userForm">
+                <p id="userid" style="color: #315f6b; font-size: larger; font-weight: bold;"></p>
+                <div>
+                    <label for="name">Name
+                        <input type="text" id="name" placeholder="Enter Name" />
+                       <small><p id="pname" style="color: red; font-size: 10; visibility: visible;"></p></small>
+                    </label>
+                </div>
+                <div>
+                    <label for="email">Email
+                        <input type="text" id="email" placeholder="Enter Email" />
+                        <small><p id="pemail" style="color: red; font-size: 15; visibility: visible;"></p></small>
+                    </label>
+                </div>
+                <div>
+                    <label for="gender">Gender
+                        <input type="radio" name="gender" id="malegender" value="Male"> Male
+                        <input type="radio" name="gender" id="femalegender" value="Female"> Female
+                        <small><p id="pgender" style="color: red; font-size: 15; visibility: visible;"></p></small>
+                    </label>
+                </div>
+                <div>
+                    <label for="hobbies">Hobbies</label>
+
+                    <input type="checkbox" name="hobbies" id="reading" value="Reading">
+                    <label for="reading"> Reading</label>
+                    <input type="checkbox" name="hobbies" id="travelling" value="Travelling">
+                    <label for="travelling"> Travelling</label>
+                    <input type="checkbox" name="hobbies" id="sports" value="Sports">
+                    <label for="sports"> Sports
+                        <small><p id="phobbies" style="color: red; font-size: 15; visibility: visible;"></p></small>
+                    </label>
+                </div>
+                <div>
+                    <label for="age">Age <input type="text" id="age" name="age" placeholder="Enter Age" />
+                        <small><p id="page" style="color: red; font-size: 15; visibility: visible;"></p></small>
+                    </label>
+                </div>
+                <div>
+                    <label for="country">Country
+                        <select id="country" name="country" onchange="getState()">
+                            <option>Select Country</option>
+                        </select>
+                        <small><p id="pcountry" style="color: red; font-size: 15; visibility: visible;"></p></small>
+                    </label>
+                </div>
+                <div>
+                    <label for="state">State
+                        <select id="state" onchange="getCity()">
+                            <option>Select State</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="city">City
+                        <select id="city">
+                            <option>Select City</option>
+                        </select></label>
+                </div>
+                <br>
+                <div id="submitdiv">
+                    <button style="max-width: 140px; float: right; text-align: center;" type="button"
+                        class="submit button" id="sbt" onclick="onSubmitData()">Submit</button>
+                    <button style="max-width: 140px; float: left; text-align: center; visibility: hidden;"
+                        class="submit button" id="ubt" onclick="onClearForm()">Clear</button>
+                </div>
+            </form>
+        </div>
+        <div style="height: 630px; width: 1050px; overflow: auto; padding: 20px;">
+            <table id="user">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Hobbies</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>Delete</th>
+                        <th>Modify</th>
+                    </tr>
+                </thead>                
+            </table>
+        </div>
+        <div style="width: 200px; overflow: auto; padding: 20px;">
+            <div>
+                <label for="search">Name :
+                    <input type="text" id="input" onkeyup="search()" placeholder="Search By User Name" /></label>
+            </div>
+            <ul class="list"></ul>
+        </div>
+        <div style="width: 160px; padding: 20px;">
+            <label for="order">Order :
+                <select id="order" onchange="tableOder()">
+                    <option>Select Order</option>
+                    <option>Ascending</option>
+                    <option>Descending</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <!-- <a onclick="data()" id="enter" class="button">Enter</a> -->
+</body>
+<!-- <script type="text/javascript" src="js/load_country_state_city.js"></script> -->
+<script type="text/javascript" src="js/load_country_state_city_json.js"></script>
+<script type="text/javascript" src="js/add_data_to_table.js"></script>
+<script type="text/javascript" src="js/remove_user_details.js"></script>
+<script type="text/javascript" src="js/search_user_data.js"></script>
+<script type="text/javascript" src="js/edit_user_details.js"></script>
+<script type="text/javascript" src="js/form_validation.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/data_country_state_city_json.js"></script> -->
+
+</html>
