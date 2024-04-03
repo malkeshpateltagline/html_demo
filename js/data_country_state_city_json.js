@@ -1,4 +1,4 @@
-var place = {
+let place = {
     "country": [
         {
             "countryname": "India",

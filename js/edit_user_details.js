@@ -1,19 +1,14 @@
 function editUserData(idLocal) {
-
+    clearPTag();
     document.getElementById("ubt").style.visibility = "visible";
 
-    var element = document.getElementById('sbt');
+    let element = document.getElementById('sbt');
     element.innerHTML = 'Update';
-
-
-    // let div = document.getElementById('submitdiv');
-    //     let button = document.createElement('button');
-    //     div.append(button);
 
     for (let i = 0; i < userData.length; i++) {
         if (userData[i].id === idLocal) {
-            element.setAttribute('value',userData[i].id);
-            document.getElementById('userid').setAttribute('style','color: #315f6b; font-size: larger; font-weight: bold;'); 
+            element.setAttribute('value', userData[i].id);
+            document.getElementById('userid').setAttribute('style', 'color: #315f6b; font-size: larger; font-weight: bold;');
             document.getElementById('userid').innerHTML = userData[i].id;
             document.getElementById('name').value = userData[i].name;
             document.getElementById('email').value = userData[i].email;
@@ -49,31 +44,24 @@ function editUserData(idLocal) {
             }
             document.getElementById('age').value = userData[i].age;
             document.getElementById('country').value = userData[i].country;
-            getState();            
+            getState();
             document.getElementById('state').value = userData[i].state;
-            //alert(userData[i].state);   
-            getCityByPara(userData[i].state);         
+
+            getCityByPara(userData[i].state);
             document.getElementById('city').value = userData[i].city;
-            //alert(userData[i].city);
         }
     }
 }
 
-// function onClearForm() {
-//     var element = document.getElementById('sbt');
-//     element.innerHTML = 'Submit';
-// }
-
-
-function getCityByPara(state){
+function getCityByPara(state) {
     let e = document.getElementById("country");
     document.getElementById("city").innerHTML = "";
     let text1 = e.options[e.selectedIndex].text;
-    for (var j = 0; j < place.country.length; j++) {
+    for (let j = 0; j < place.country.length; j++) {
         if (text1 === place.country[j].countryname) {
-            for (var i = 0; i < place.country[j].states.length; i++) {
+            for (let i = 0; i < place.country[j].states.length; i++) {
                 if (state === place.country[j].states[i].name) {
-                    for (var k = 0; k < place.country[j].states[i].cities.length; k++) {
+                    for (let k = 0; k < place.country[j].states[i].cities.length; k++) {
                         let select = document.getElementById("city");
                         let optn = place.country[j].states[i].cities[k].name;
                         let el = document.createElement("option");
